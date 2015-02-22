@@ -28,7 +28,7 @@ training_data <- cbind(subjects_train,activity_train,feature_train)
 
 merged_data <- rbind(test_data,training_data)
 
-merged_data$Activity[merged_data$Activity == 1] <- "WALKING"; merged_data$Activity[merged_data$Activity == 2] <- "SWALKING_UPSTAIRS"; merged_data$Activity[merged_data$Activity == 3] <- "WALKING_DOWNSTAIRS"; merged_data$Activity[merged_data$Activity == 4] <- "SITTING"; merged_data$Activity[merged_data$Activity == 5] <- "STANDING"; merged_data$Activity[merged_data$Activity == 6] <- "LAYING"
+merged_data$Activity[merged_data$Activity == 1] <- "WALKING"; merged_data$Activity[merged_data$Activity == 2] <- "WALKING_UPSTAIRS"; merged_data$Activity[merged_data$Activity == 3] <- "WALKING_DOWNSTAIRS"; merged_data$Activity[merged_data$Activity == 4] <- "SITTING"; merged_data$Activity[merged_data$Activity == 5] <- "STANDING"; merged_data$Activity[merged_data$Activity == 6] <- "LAYING"
 
 Subject <- merged_data[,grep('Subject',names(merged_data))]; Activity <- merged_data[,grep('Activity',names(merged_data))]; meandata <- merged_data[,grep('mean',names(merged_data))]; sddata <- merged_data[,grep('std',names(merged_data))]
 merged_data <- cbind(Subject,Activity,meandata,sddata)
